@@ -2,6 +2,7 @@ var bg;
 var a=[];
 var frame;
 function setup(){
+	img = loadImage("Test.png");
 	bg = loadImage("BG.png");
 	createCanvas(420,600);
 	noCursor();
@@ -14,9 +15,7 @@ function draw(){
 	//var time2 = (new Date()%100)/100;
 	background(bg);
 	noStroke();
-	fill(255);
-	ellipse(mouseX,mouseY,10,10);
-	//drawTest(mouseX,mouseY,100,100);
+	img(img,mouseX,mouseY,100,100);
 
 }
 
