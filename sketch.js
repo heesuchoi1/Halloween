@@ -12,11 +12,12 @@ function draw(){
 
 	//var time = (new Date()%3000)/3000;
 	//var time2 = (new Date()%100)/100;
+	background(bg);
+	noStroke();
 	fill(255);
 	ellipse(mouseX,mouseY,10,10);
 	//drawTest(mouseX,mouseY,100,100);
-	background(bg);
-	noStroke();
+
 }
 
 /*function drawTest(x,y,w,h){
