@@ -2,7 +2,7 @@ var bg;
 var a=[];
 var frame;
 function setup(){
-	bg = loadImage("GitHub/Halloween/BG.png");
+	bg = loadImage("BG.png");
 	createCanvas(420,600);
 	frame = 0;
 }
