@@ -15,7 +15,7 @@ function draw(){
 	//var time2 = (new Date()%100)/100;
 	background(bg);
 	noStroke();
-	img(img,mouseX,mouseY,100,100);
+	image(img, 0, height/2, img.width/2, img.height/2);
 
 }
 
