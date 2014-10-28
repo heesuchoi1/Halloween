@@ -23,8 +23,7 @@ function draw(){
 		frame = 0;
 	}
 }
-
-/*function anime(f){
+function anime(f){
 	if(f <1){
 		frame1();
 	}else if(f<2){
@@ -44,3 +43,5 @@ function frame2(){
 	fill(255,155,333);
 	ellipse(100,10,100,100);
 }
+
+*/
