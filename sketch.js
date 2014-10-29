@@ -281,7 +281,7 @@ ParticleSystem.prototype.run = function() {
 function mousePressed() {
   // Check if mouse is inside the circle
   var d = dist(mouseX, mouseY, 360, 200);
-  if (d < 0) {
+  if (d < 150) {
     // Pick new random color values
     r = random(255);
     g = random(255);
