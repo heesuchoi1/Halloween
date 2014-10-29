@@ -2,10 +2,9 @@ var bg;
 var a=[];
 var frame;
 function setup(){
-	img = loadImage("Test.png");
+
 	bg = loadImage("BG.png");
 	createCanvas(420,600);
-	noCursor();
 	frame = 0;
 }
 
@@ -15,10 +14,11 @@ function draw(){
 	//var time2 = (new Date()%100)/100;
 	background(bg);
 	noStroke();
-	image(img, 0, height/2, img.width/2, img.height/2);
 
+	fill(Math.random()*255,Math.random()*255,Math.random()*255,100);
+     var y;
+     y=300;
+     
+     rect(20,180,1,1);
+     rect(120,80,15,15);
 }
-
-/*function drawTest(x,y,w,h){
-	loadImage("test.png")
-}*/
