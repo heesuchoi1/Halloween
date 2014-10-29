@@ -22,7 +22,7 @@ function draw(){
 	strokeWeight(2);
     stroke(r, g, b);
     fill(r, g, b, 127);
-    ellipse(150, 265, 80, 80);
+    ellipse(360, 200, 200, 200);
 
 	var time = (new Date()%2000)/2000;
 	var time2 = (new Date()%1000)/1000;
