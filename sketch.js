@@ -193,19 +193,32 @@ function drawSpider(){
     ellipse(300,150,10,10);
     ellipse(360,300,5,5);
     ellipse(380,400,10,10);
-    ellipse();
-    ellipse()
+    ellipse(50,90,15,15);
+    ellipse(255,40,5,5);
+    ellipse(115,75,10,10);
+    ellipse(345,55,5,5);
+    ellipse(275,85,10,10);
+    ellipse(375,100,15,15);
+    ellipse(220,110,5,5);
+    ellipse(105,115,5,5);
+    ellipse(90,150,10,10);
+    ellipse(35,165,15,15);
+    ellipse(75,210,5,5);
+    ellipse(30,220,10,10);
+    ellipse(60,250,7,7);
+    ellipse(25,270,5,5);
+    ellipse(290,145,5,5);
+    ellipse(365,140,10,10);
+    ellipse(385,200,7,7);
+    ellipse(390,270,15,15);
+    ellipse(340,300,10,10);
+    ellipse(350,365,3,3);
+    ellipse(280,395,5,5);
+    ellipse(170,370,10,10);
+    ellipse(115,355,6,6);
+    ellipse(60,335,15,15);
+    ellipse(80,280,5,5);
 
-/*
-    //움직이기//
-    fill(255,255,0);
-	ellipse(110,270,20,Math.abs(20-time*20));
-	anime(frame);
-	frame=frame+0.1;
-	if(frame >2){
-		frame = 0
-
-	}*/
 }
 
 
@@ -255,63 +268,6 @@ triangle(100,115,110,110,110,125);
 triangle(110,110,115,115,115,125);
 }
 
-/*
-// A simple Particle class
-var Particle = function(position) {
-  this.acceleration = createVector(0, 0.05);
-  this.velocity = createVector(random(-1, 1), random(-1, 0));
-  this.position = position.get();
-  this.lifespan = 255.0;
-};
-
-Particle.prototype.run = function() {
-  this.update();
-  this.display();
-};
-
-// Method to update position
-Particle.prototype.update = function(){
-  this.velocity.add(this.acceleration);
-  this.position.add(this.velocity);
-  this.lifespan -= 2;
-};
-
-// Method to display
-Particle.prototype.display = function() {
-  stroke(200, this.lifespan);
-  strokeWeight(2);
-  fill(127, this.lifespan);
-  ellipse(this.position.x, this.position.y, 12, 12);
-};
-
-// Is the particle still useful?
-Particle.prototype.isDead = function(){
-  if (this.lifespan < 0) {
-    return true;
-  } else {
-    return false;
-  }
-};
-
-var ParticleSystem = function(position) {
-  this.origin = position.get();
-  this.particles = [];
-};
-
-ParticleSystem.prototype.addParticle = function() {
-  this.particles.push(new Particle(this.origin));
-};
-
-ParticleSystem.prototype.run = function() {
-  for (var i = this.particles.length-1; i >= 0; i--) {
-    var p = this.particles[i];
-    p.run();
-    if (p.isDead()) {
-      this.particles.splice(i, 1);
-    }
-  }
-};
-*/
 
 function mousePressed() {
   // Check if mouse is inside the circle
