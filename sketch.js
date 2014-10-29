@@ -41,8 +41,8 @@ function draw(){
 	var time = (new Date()%2000)/2000;
 	var time2 = (new Date()%1000)/1000;
   	fill(0);
-    //translate(60,timing*250);
-    drawSpider(60,timing*250);
+
+    drawSpider(80,timing*250);
 	noStroke();
 
 //호박	
@@ -193,7 +193,8 @@ function drawSpider(){
     ellipse(300,150,10,10);
     ellipse(360,300,5,5);
     ellipse(380,400,10,10);
-
+    ellipse();
+    ellipse();
 
 /*
     //움직이기//
