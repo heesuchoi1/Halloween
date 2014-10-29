@@ -2,14 +2,12 @@
 var bg;
 var a=[];
 var frame;
-var grow;
-var growCount;
+var system;
 
 function setup(){
 	createCanvas(420,600);
 	frame = 0;
-	grow=0;
-    growCount=0;
+	system = new ParticleSystem(createVector(width/2, 50));
 	bg = loadImage("BG.png");
 }
 
@@ -18,19 +16,9 @@ function draw(){
 
 	var time = (new Date()%3000)/3000;
 	var time2 = (new Date()%100)/100;
-
+	system.addParticle();
+  	system.run();
 	noStroke();
-
-	drawPumkin2(255,215,0,grow);
-   grow=grow-1;
-   if(grow<-10){
-      grow=-10;
-	}
-   growCount=growCount+1;
-   if(growCount>200){
-      grow=0;
-      growCount=0;
-   }
 
 
 fill(0);
@@ -176,18 +164,6 @@ rect(mouseX+100,mouseY+120,10,5);
 
 
 
-function drawPumkin2(r,g,b,a){
-
-noStroke();
-triangle(260,475,275,480,270,480,r,g,b,a);
-triangle(285,475,285,480,280,480,r,g,b,a);
-rect(270,485,15,5,r,g,b,a);
-triangle(300,470,300,475,305,475,r,g,b,a);
-triangle(320,470,320,475,315,475,r,g,b,a);
-rect(300,480,20,5,r,g,b,a);
-
-}
-
 function anime(f){
 	if(f<1){
 		frame1();
@@ -232,3 +208,60 @@ triangle(115,95,120,105,110,110);
 triangle(100,115,110,110,110,125);
 triangle(110,110,115,115,115,125);
 }
+
+
+// A simple Particle class
+var Particle = function(position) {
+  this.acceleration = createVector(0, 0.05);
+  this.velocity = createVector(random(-1, 1), random(-1, 0));
+  this.position = position.get();
+  this.lifespan = 255.0;
+};
+
+Particle.prototype.run = function() {
+  this.update();
+  this.display();
+};
+
+// Method to update position
+Particle.prototype.update = function(){
+  this.velocity.add(this.acceleration);
+  this.position.add(this.velocity);
+  this.lifespan -= 2;
+};
+
+// Method to display
+Particle.prototype.display = function() {
+  stroke(200, this.lifespan);
+  strokeWeight(2);
+  fill(127, this.lifespan);
+  ellipse(this.position.x, this.position.y, 12, 12);
+};
+
+// Is the particle still useful?
+Particle.prototype.isDead = function(){
+  if (this.lifespan < 0) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+var ParticleSystem = function(position) {
+  this.origin = position.get();
+  this.particles = [];
+};
+
+ParticleSystem.prototype.addParticle = function() {
+  this.particles.push(new Particle(this.origin));
+};
+
+ParticleSystem.prototype.run = function() {
+  for (var i = this.particles.length-1; i >= 0; i--) {
+    var p = this.particles[i];
+    p.run();
+    if (p.isDead()) {
+      this.particles.splice(i, 1);
+    }
+  }
+};
