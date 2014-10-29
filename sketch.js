@@ -41,8 +41,8 @@ function draw(){
 	var time = (new Date()%2000)/2000;
 	var time2 = (new Date()%1000)/1000;
   	fill(0);
-
-    drawSpider(80,timing*250);
+    //translate(60,timing*250);
+    drawSpider(60,timing*250);
 	noStroke();
 
 //호박	
@@ -163,21 +163,21 @@ rect(mouseX+100,mouseY+120,10,5);
 function drawSpider(){
   fill(0);
 
-  triangle(310,230*time,320,225*time,315,230*time);
-  triangle(310,230*time,315,230*time,325,240*time);
-  triangle(305,235*time,310,240*time,325,240*time);
-  triangle(305,235*time,310,240*time,315,255*time);
-  triangle(325,245*time,305,255*time,310,255*time);
-  triangle(320,265*time,305,255*time,310,255*time);
-  triangle(335,225*time,345,230*time,340,230*time);
-  triangle(330,240*time,345,230*time,340,230*time);
-  triangle(330,240*time,350,235*time,345,240*time);
-  triangle(340,255*time,350,235*time,345,240*time);
-  triangle(330,245*time,350,255*time,345,255*time);
-  triangle(335,265*time,350,255*time,345,255*time);
+  triangle(310+30,230*time,320+30,225*time,315+30,230*time);
+  triangle(310+30,230*time,315+30,230*time,325+30,240*time);
+  triangle(305+30,235*time,310+30,240*time,325+30,240*time);
+  triangle(305+30,235*time,310+30,240*time,315+30,255*time);
+  triangle(325+30,245*time,305+30,255*time,310+30,255*time);
+  triangle(320+30,265*time,305+30,255*time,310+30,255*time);
+  triangle(335+30,225*time,345+30,230*time,340+30,230*time);
+  triangle(330+30,240*time,345+30,230*time,340+30,230*time);
+  triangle(330+30,240*time,350+30,235*time,345+30,240*time);
+  triangle(340+30,255*time,350+30,235*time,345+30,240*time);
+  triangle(330+30,245*time,350+30,255*time,345+30,255*time);
+  triangle(335+30,265*time,350+30,255*time,345+30,255*time);
 
-  ellipse(327,250*time,15,20);
-  ellipse(327,237*time,5,5);
+  ellipse(327+30,250*time,15,20);
+  ellipse(327+30,237*time,5,5);
 }
 //따라다니는 별
 
@@ -194,7 +194,7 @@ function drawSpider(){
     ellipse(360,300,5,5);
     ellipse(380,400,10,10);
     ellipse();
-    ellipse();
+    ellipse()
 
 /*
     //움직이기//
