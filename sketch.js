@@ -176,8 +176,8 @@ function drawSpider(){
   triangle(330,245*time,350,255*time,345,255*time);
   triangle(335,265*time,350,255*time,345,255*time);
 
-  ellipse(327,250,15,20);
-  ellipse(327,237,5,5);
+  ellipse(327,250*time,15,20);
+  ellipse(327,237*time,5,5);
 }
 //따라다니는 별
 
