@@ -20,9 +20,9 @@ function draw(){
 
 	//drawCircle
 	strokeWeight(2);
-    stroke(r, g, b);
+    noStroke();
     fill(r, g, b, 127);
-    ellipse(210, 250, 200, 200);
+    ellipse(210, 245, 210, 210);
 
 	var time = (new Date()%2000)/2000;
 	var time2 = (new Date()%1000)/1000;
