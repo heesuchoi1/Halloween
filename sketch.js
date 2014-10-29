@@ -22,7 +22,7 @@ function draw(){
 	noStroke();
 
 
-fill(0);
+ fill(255,255,0,Math.abs(255-time2*255*2));
 triangle(260,475,275,480,270,480);
 triangle(285,475,285,480,280,480);
 rect(270,485,15,5);
@@ -149,14 +149,14 @@ rect(mouseX+100,mouseY+120,10,5);
 
 
     //움직이기//
-    /*fill(255,255,0,Math.abs(255-time2*255*2));
+    fill(255,255,0,Math.abs(255-time2*255*2));
 	ellipse(210,300,100,Math.abs(50-time*100));
 	anime(frame);
 	frame=frame+0.1;
 	if(frame >2){
-		frame = 0;
+		frame = 0
 
-	}*/
+	}
 }
 
 
