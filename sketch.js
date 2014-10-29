@@ -17,30 +17,6 @@ function draw(){
 
 	noStroke();
 
-	//별//
-	fill(Math.random()*255,Math.random()*255,Math.random()*255,100);
-    var y;
-    y=300;
-     
-    ellipse(20,180,10,10);
-    ellipse(120,80,15,15);
-    ellipse(190,50,5,5);
-    ellipse(300,150,10,10);
-    ellipse(360,300,5,5);
-    ellipse(380,400,10,10);
-
-
-
-    //움직이기//
-    fill(255,255,0,Math.abs(255-time2*255*2));
-	ellipse(210,300,100,Math.abs(50-time*100));
-	anime(frame);
-	frame=frame+0.1;
-	if(frame >2){
-		frame = 0;
-	
-
-
 //마녀모자
 fill(0);
 rect(mouseX+75,mouseY,10,5);
@@ -140,6 +116,31 @@ rect(mouseX+105,mouseY+115,5,5);
 rect(mouseX+115,mouseY+115,5,10);
 rect(mouseX+100,mouseY+120,10,5);
 //	
+	//별//
+	fill(Math.random()*255,Math.random()*255,Math.random()*255,100);
+    var y;
+    y=300;
+     
+    ellipse(20,180,10,10);
+    ellipse(120,80,15,15);
+    ellipse(190,50,5,5);
+    ellipse(300,150,10,10);
+    ellipse(360,300,5,5);
+    ellipse(380,400,10,10);
+
+
+
+    //움직이기//
+    fill(255,255,0,Math.abs(255-time2*255*2));
+	ellipse(210,300,100,Math.abs(50-time*100));
+	anime(frame);
+	frame=frame+0.1;
+	if(frame >2){
+		frame = 0;
+	
+
+
+
 
 
 
