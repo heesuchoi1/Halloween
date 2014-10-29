@@ -6,13 +6,14 @@ var system;
 
 function setup(){
 	createCanvas(420,600);
+	bg = loadImage("BG.png");
 	frame = 0;
 	system = new ParticleSystem(createVector(width/2, 50));
-	bg = loadImage("BG.png");
+
 }
 
 function draw(){
-
+	background(bg);
 
 	var time = (new Date()%3000)/3000;
 	var time2 = (new Date()%100)/100;
@@ -157,7 +158,7 @@ rect(mouseX+100,mouseY+120,10,5);
 
 
 
-	background(bg);
+
 
 	}
 }
