@@ -2,23 +2,33 @@
 var bg;
 var a=[];
 var frame;
-var system;
+var r, g, b;
+//var system;
 
 function setup(){
 	createCanvas(420,600);
 	bg = loadImage("BG.png");
 	frame = 0;
-	system = new ParticleSystem(createVector(width/2, 50));
-
+	//system = new ParticleSystem(createVector(width/2, 50));
+	r = random(255);
+    g = random(255);
+    b = random(255);
 }
 
 function draw(){
 	background(bg);
 
+	//drawCircle
+	strokeWeight(2);
+    stroke(r, g, b);
+    fill(r, g, b, 127);
+    ellipse(150, 265, 80, 80);
+
 	var time = (new Date()%2000)/2000;
 	var time2 = (new Date()%1000)/1000;
-	system.addParticle();
-  	system.run();
+	//system.addParticle();
+  	//system.run();
+
 	noStroke();
 fill(0);
 ellipse(275,480,35,35);
@@ -149,7 +159,7 @@ rect(mouseX+100,mouseY+120,10,5);
     ellipse(380,400,10,10);
 
 
-
+/*
     //움직이기//
     fill(255,255,0);
 	ellipse(110,270,20,Math.abs(20-time*20));
@@ -158,7 +168,7 @@ rect(mouseX+100,mouseY+120,10,5);
 	if(frame >2){
 		frame = 0
 
-	}
+	}*/
 }
 
 
@@ -208,7 +218,7 @@ triangle(100,115,110,110,110,125);
 triangle(110,110,115,115,115,125);
 }
 
-
+/*
 // A simple Particle class
 var Particle = function(position) {
   this.acceleration = createVector(0, 0.05);
@@ -264,3 +274,15 @@ ParticleSystem.prototype.run = function() {
     }
   }
 };
+*/
+
+function mousePressed() {
+  // Check if mouse is inside the circle
+  var d = dist(mouseX, mouseY, 360, 200);
+  if (d < 100) {
+    // Pick new random color values
+    r = random(255);
+    g = random(255);
+    b = random(255);
+  }
+}
