@@ -16,7 +16,7 @@ function draw(){
 	background(bg);
 
 	var time = (new Date()%3000)/3000;
-	var time2 = (new Date()%100)/100;
+	var time2 = (new Date()%1000)/1000;
 	system.addParticle();
   	system.run();
 	noStroke();
