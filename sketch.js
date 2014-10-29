@@ -21,7 +21,7 @@ function draw(){
 
 	noStroke();
 
-trailX[0] = (mouseX+7/80 + trailX[0]) / 2;
+trailX[0] = mouseX;
 trailY[0] = mouseY;
 //마녀모자
 fill(0);
@@ -65,7 +65,7 @@ rect(mouseX+130,mouseY+110,10,5);
 fill(155,118,54);
 rect(mouseX+145,mouseY+110,15,5);
 rect(mouseX+170,mouseY+110,20,5);
-rect(mouseX+140,mouseY+115,140,5);
+rect(mouseX+140,mouseY+115,40,5);
 rect(mouseX+140,mouseY+120,50,5);
 rect(mouseX+145,mouseY+125,35,5);
 rect(mouseX+145,mouseY+135,50,5);
