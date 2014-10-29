@@ -152,7 +152,7 @@ rect(mouseX+100,mouseY+120,10,5);
 
     //움직이기//
     fill(255,255,0);
-	ellipse(108,270,20,Math.abs(20-time*20));
+	ellipse(110,270,20,Math.abs(20-time*20));
 	anime(frame);
 	frame=frame+0.1;
 	if(frame >2){
