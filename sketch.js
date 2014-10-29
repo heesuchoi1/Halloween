@@ -1,18 +1,10 @@
 
-var trailX;
-var trailY;
 var bg;
 var a=[];
 var frame;
-var starNum=7;
+
 
 function setup(){
-	trailX = [];
-	trailY = [];
-	for(var i = 0; i<starNum;i=i+1){
-		trailX[i]=0;
-		trailY[i]=0;
-	}
 	createCanvas(420,600);
 	frame = 0;
 	bg = loadImage("BG.png");
@@ -26,13 +18,6 @@ function draw(){
 
 	noStroke();
 
-	trailX[0] = (mouseX+7/80 + trailX[0]) /2;
-	trailY[0] = mouseY;
-
-	for(var i = 1;i<starNum;i=i+1){
-		trailX[i] = (trailX[i-1]+70+trailX[i]) / 2;
-		trailY[i] = (trailY[i-1] + trailY[i]) /2
-	}
 //마녀모자
 fill(0);
 rect(mouseX+75,mouseY,10,5);
@@ -135,9 +120,6 @@ rect(mouseX+100,mouseY+120,10,5);
 //	
 
 //따라다니는 별
-for(var i=0; i<starNum;i=i=1){
-	drawStar(trailX[i],trailY[i], 255-255*i)
-}
 
 
 	//별//
@@ -169,18 +151,8 @@ for(var i=0; i<starNum;i=i=1){
 	}
 }
 
-function drawStar(x,y,a){
-	fill(Math.random()*255,Math.random()*255,Math.random()*255,100);
-    var y;
-    y=300;
-     
-    ellipse(20,180,10,10);
-    ellipse(120,80,15,15);
-    ellipse(190,50,5,5);
-    ellipse(300,150,10,10);
-    ellipse(360,300,5,5);
-    ellipse(380,400,10,10);
-}
+
+
 function anime(f){
 	if(f<1){
 		frame1();
