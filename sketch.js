@@ -22,7 +22,7 @@ function draw(){
 	strokeWeight(2);
     stroke(r, g, b);
     fill(r, g, b, 127);
-    ellipse(360, 200, 200, 200);
+    ellipse(210, 280, 200, 200);
 
 	var time = (new Date()%2000)/2000;
 	var time2 = (new Date()%1000)/1000;
@@ -30,6 +30,8 @@ function draw(){
   	//system.run();
 
 	noStroke();
+
+//호박	
 fill(0);
 ellipse(275,480,35,35);
 ellipse(310,480,40,40);
