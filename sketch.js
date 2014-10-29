@@ -22,7 +22,7 @@ function draw(){
 	strokeWeight(2);
     stroke(r, g, b);
     fill(r, g, b, 127);
-    ellipse(210, 280, 200, 200);
+    ellipse(210, 250, 200, 200);
 
 	var time = (new Date()%2000)/2000;
 	var time2 = (new Date()%1000)/1000;
@@ -281,7 +281,7 @@ ParticleSystem.prototype.run = function() {
 function mousePressed() {
   // Check if mouse is inside the circle
   var d = dist(mouseX, mouseY, 360, 200);
-  if (d < 100) {
+  if (d < 0) {
     // Pick new random color values
     r = random(255);
     g = random(255);
