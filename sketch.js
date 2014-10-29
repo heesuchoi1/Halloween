@@ -3,7 +3,11 @@ var bg;
 var a=[];
 var frame;
 var r, g, b;
-//var system;
+var downCount;
+var down;
+var count;
+var song;
+var button;
 
 function setup(){
 	createCanvas(420,600);
@@ -13,12 +17,35 @@ function setup(){
 	r = random(255);
     g = random(255);
     b = random(255);
+    count=0;
+  	down=0;
+  	downCount=0;
+  	soundFormats('mp3');
+  	song = loadSound("Halloween/HalloweenSong.mp3");
+  	button = new button(380,50,30);
+}
+
+function mousePressed() {
+  if (button.contains(mouseX, mouseY)) {
+    song.play();
+  }
 }
 
 function draw(){
 	background(bg);
+	var duration = 4500;
+    var timing = (new Date()%duration)/duration;
+    background(255, 255, 255);
+    noStroke();
+    fill(0);
+    translate(60,timing*250);
+    drawSpider();
+
+    //button
+    button.display(mouseX, mouseY);
 
 	//drawCircle
+
 	strokeWeight(2);
     noStroke();
     fill(r, g, b, 127);
@@ -144,7 +171,27 @@ rect(mouseX+105,mouseY+115,5,5);
 rect(mouseX+115,mouseY+115,5,10);
 rect(mouseX+100,mouseY+120,10,5);
 //	
+//거미
 
+function drawSpider(){
+  fill(0);
+
+  triangle(310,230,320,225,315,230);
+  triangle(310,230,315,230,325,240);
+  triangle(305,235,310,240,325,240);
+  triangle(305,235,310,240,315,255);
+  triangle(325,245,305,255,310,255);
+  triangle(320,265,305,255,310,255);
+  triangle(335,225,345,230,340,230);
+  triangle(330,240,345,230,340,230);
+  triangle(330,240,350,235,345,240);
+  triangle(340,255,350,235,345,240);
+  triangle(330,245,350,255,345,255);
+  triangle(335,265,350,255,345,255);
+
+  ellipse(327,250,15,20);
+  ellipse(327,237,5,5);
+}
 //따라다니는 별
 
 
@@ -288,3 +335,31 @@ function mousePressed() {
     b = random(255);
   }
 }
+
+var button = function(x_, y_, r_) {
+  // Location and size
+  var x = x_;
+  var y = y_;
+  var r = r_;
+
+  // Is a point inside the doorbell? (used for mouse rollover, etc.)
+  this.contains = function(mx, my) {
+    if (dist(mx, my, x, y) < r) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  // Show the doorbell (hardcoded colors, could be improved)
+  this.display = function(mx, my) {
+    if (this.contains(mx, my)) {
+      fill(100);
+    } else {
+      fill(175);
+    }
+    stroke(0);
+    strokeWeight(4);
+    ellipse(x, y, r, r);
+  };
+};
