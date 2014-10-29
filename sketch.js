@@ -20,6 +20,13 @@ function draw(){
 	system.addParticle();
   	system.run();
 	noStroke();
+fill(0);
+triangle(260,475,275,480,270,480);
+triangle(285,475,285,480,280,480);
+rect(270,485,15,5);
+triangle(300,470,300,475,305,475);
+triangle(320,470,320,475,315,475);
+rect(300,480,20,5);
 
 
  fill(255,255,0,Math.abs(255-time2*255*2));
@@ -150,7 +157,7 @@ rect(mouseX+100,mouseY+120,10,5);
 
     //움직이기//
     fill(255,255,0,Math.abs(255-time2*255*2));
-	ellipse(210,300,100,Math.abs(50-time*100));
+	ellipse(150,300,50,Math.abs(25-time*50));
 	anime(frame);
 	frame=frame+0.1;
 	if(frame >2){
