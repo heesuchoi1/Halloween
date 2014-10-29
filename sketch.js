@@ -1,11 +1,18 @@
 
-
+var trailX;
+var trailY;
 var bg;
 var a=[];
 var frame;
+var starNum=7;
 
 function setup(){
-
+	trailX = [];
+	trailY = [];
+	for(var i = 0; i<starNum;i=i+1){
+		trailX[i]=0;
+		trailY[i]=0;
+	}
 	createCanvas(420,600);
 	frame = 0;
 	bg = loadImage("BG.png");
@@ -19,6 +26,13 @@ function draw(){
 
 	noStroke();
 
+	trailX[0] = (mouseX+7/80 + trailX[0]) /2;
+	trailY[0] = mouseY;
+
+	for(var i = 1;i<starNum;i=i+1){
+		trailX[i] = (trailX[i-1]+70+trailX[i]) / 2;
+		trailY[i] = (trailY[i-1] + trailY[i]) /2
+	}
 //마녀모자
 fill(0);
 rect(mouseX+75,mouseY,10,5);
@@ -32,13 +46,13 @@ rect(mouseX+55,mouseY+35,25,5);
 rect(mouseX+65,mouseY+40,10,5);
 //마녀머리
 fill(225,98,50);
-rect(mouseX+95,mouseY+30,5,5);
+rect(mouseX+95,mouseY+35,5,5);
 rect(mouseX+40,mouseY+35,5,5);
 rect(mouseX+60,mouseY+40,5,5);
 rect(mouseX+75,mouseY+40,25,5);
 rect(mouseX+105,mouseY+40,10,5);
 rect(mouseX+65,mouseY+45,40,5);
-rect(mouseX+55,mouseY+50,10,5);
+rect(mouseX+65,mouseY+50,15,5);
 rect(mouseX+90,mouseY+50,10,5);
 rect(mouseX+105,mouseY+50,5,5);
 rect(mouseX+75,mouseY+55,5,5);
@@ -70,7 +84,7 @@ rect(mouseX+150,mouseY+140,40,5);
 rect(mouseX+150,mouseY+145,15,5);
 rect(mouseX+170,mouseY+145,10,5);
 rect(mouseX+190,mouseY+145,5,5);
-rect(mouseX+160,mouseY+160,5,5);
+rect(mouseX+160,mouseY+150,5,5);
 rect(mouseX+180,mouseY+150,10,5);
 //손
 fill(241,204,171);
@@ -85,7 +99,7 @@ rect(mouseX+60,mouseY+60,30,5);
 rect(mouseX+40,mouseY+65,55,5);
 rect(mouseX+40,mouseY+70,70,20);
 rect(mouseX+125,mouseY+70,5,5);
-rect(mouseX+110,mouseY+75,35,5);
+rect(mouseX+110,mouseY+75,45,5);
 rect(mouseX+140,mouseY+70,15,5);
 rect(mouseX+145,mouseY+65,15,5);
 rect(mouseX+45,mouseY+80,110,5);
@@ -100,7 +114,7 @@ rect(mouseX+80,mouseY+105,20,5);
 rect(mouseX+135,mouseY+105,10,5);
 rect(mouseX+60,mouseY+110,15,5);
 rect(mouseX+85,mouseY+110,15,5);
-rect(mouseX+115,mouseY+60,10,5);
+rect(mouseX+110,mouseY+85,20,5);
 rect(mouseX+90,mouseY+115,5,5);
 rect(mouseX+70,mouseY+120,10,5);
 //마녀신발
@@ -119,6 +133,13 @@ rect(mouseX+105,mouseY+115,5,5);
 rect(mouseX+115,mouseY+115,5,10);
 rect(mouseX+100,mouseY+120,10,5);
 //	
+
+//따라다니는 별
+for(var i=0; i<starNum;i=i=1){
+	drawStar(trailX[i],trailY[i], 255-255*i)
+}
+
+
 	//별//
 	fill(Math.random()*255,Math.random()*255,Math.random()*255,100);
     var y;
@@ -140,17 +161,25 @@ rect(mouseX+100,mouseY+120,10,5);
 	frame=frame+0.1;
 	if(frame >2){
 		frame = 0;
-	
-
-
-
-
 
 
 
 	background(bg);
 
 	}
+}
+
+function drawStar(x,y,a){
+	fill(Math.random()*255,Math.random()*255,Math.random()*255,100);
+    var y;
+    y=300;
+     
+    ellipse(20,180,10,10);
+    ellipse(120,80,15,15);
+    ellipse(190,50,5,5);
+    ellipse(300,150,10,10);
+    ellipse(360,300,5,5);
+    ellipse(380,400,10,10);
 }
 function anime(f){
 	if(f<1){
@@ -164,16 +193,16 @@ function anime(f){
 
 
 function frame1(){
-	fill(0);
-	drawBat1(60,70);
+	fill(100);
+	drawBat1(60,70,75,85);
 }
 
 function frame2(){
-	fill(255,155,333);
-	drawBat2(60,70);
+	fill(100);
+	drawBat2(60,70,10,25);
 }
 
-function drawBat1(x,y){
+function drawBat1(x,y,w,h){
 triangle(125,65,105,85,115,95);
 triangle(125,65,125,80,115,80);
 triangle(120,75,125,90,115,95);
@@ -185,7 +214,7 @@ triangle(110,110,115,115,115,125);
 triangle(110,120,115,125,140,115);
 }
 
-function drawBat2(x,y){
+function drawBat2(x,y,w,h){
 triangle(120,75,105,85,115,95);
 triangle(120,75,125,90,115,95);
 
