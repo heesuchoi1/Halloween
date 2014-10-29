@@ -1,9 +1,13 @@
+
+var trailX;
+var trailY;
 var bg;
 var a=[];
 var frame;
 
 function setup(){
-
+	trailX = [];
+	trailY = [];
 	createCanvas(420,600);
 	frame = 0;
 	bg = loadImage("BG.png");
@@ -17,6 +21,8 @@ function draw(){
 
 	noStroke();
 
+trailX[0] = (mouseX+7/80 + trailX[0]) / 2;
+trailY[0] = mouseY;
 //마녀모자
 fill(0);
 rect(mouseX+75,mouseY,10,5);
