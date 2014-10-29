@@ -15,7 +15,7 @@ function setup(){
 function draw(){
 	background(bg);
 
-	var time = (new Date()%3000)/3000;
+	var time = (new Date()%2000)/2000;
 	var time2 = (new Date()%1000)/1000;
 	system.addParticle();
   	system.run();
@@ -152,7 +152,7 @@ rect(mouseX+100,mouseY+120,10,5);
 
     //움직이기//
     fill(255,255,0);
-	ellipse(130,280,50,Math.abs(20-time*20));
+	ellipse(130,280,20,Math.abs(20-time*20));
 	anime(frame);
 	frame=frame+0.1;
 	if(frame >2){
