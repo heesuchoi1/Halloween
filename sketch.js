@@ -2,11 +2,14 @@
 var bg;
 var a=[];
 var frame;
-
+var grow;
+var growCount;
 
 function setup(){
 	createCanvas(420,600);
 	frame = 0;
+	grow=0;
+    growCount=0;
 	bg = loadImage("BG.png");
 }
 
@@ -17,6 +20,26 @@ function draw(){
 	var time2 = (new Date()%100)/100;
 
 	noStroke();
+
+	drawPumkin2(255,215,0,grow);
+   grow=grow-1;
+   if(grow<-10){
+      grow=-10;
+	}
+   growCount=growCount+1;
+   if(growCount>200){
+      grow=0;
+      growCount=0;
+   }
+
+
+fill(0);
+triangle(260,475,275,480,270,480);
+triangle(285,475,285,480,280,480);
+rect(270,485,15,5);
+triangle(300,470,300,475,305,475);
+triangle(320,470,320,475,315,475);
+rect(300,480,20,5);
 
 //마녀모자
 fill(0);
@@ -152,6 +175,18 @@ rect(mouseX+100,mouseY+120,10,5);
 }
 
 
+
+function drawPumkin2(r,g,b,a){
+
+noStroke();
+triangle(260,475,275,480,270,480,r,g,b,a);
+triangle(285,475,285,480,280,480,r,g,b,a);
+rect(270,485,15,5,r,g,b,a);
+triangle(300,470,300,475,305,475,r,g,b,a);
+triangle(320,470,320,475,315,475,r,g,b,a);
+rect(300,480,20,5,r,g,b,a);
+
+}
 
 function anime(f){
 	if(f<1){
