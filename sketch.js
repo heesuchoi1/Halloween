@@ -64,6 +64,7 @@ rect(mouseX+170,mouseY+110,20,5);
 rect(mouseX+140,mouseY+115,40,5);
 rect(mouseX+140,mouseY+120,50,5);
 rect(mouseX+145,mouseY+125,35,5);
+rect(mouseX+145,mouseY+130,40,5);
 rect(mouseX+145,mouseY+135,50,5);
 rect(mouseX+150,mouseY+140,40,5);
 rect(mouseX+150,mouseY+145,15,5);
