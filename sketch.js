@@ -6,8 +6,7 @@ var r, g, b;
 var downCount;
 var down;
 var count;
-var song;
-var button;
+
 
 function setup(){
 	createCanvas(420,600);
@@ -17,33 +16,21 @@ function setup(){
 	r = random(255);
     g = random(255);
     b = random(255);
-    count=0;
+
+  	count=0;
   	down=0;
   	downCount=0;
-  	soundFormats('mp3');
-  	song = loadSound("Halloween/HalloweenSong.mp3");
-  	button = new button(380,50,30);
 }
 
-function mousePressed() {
-  if (button.contains(mouseX, mouseY)) {
-    song.play();
-  }
-}
 
 function draw(){
 	background(bg);
 	var duration = 4500;
     var timing = (new Date()%duration)/duration;
-    background(255, 255, 255);
     noStroke();
-    fill(0);
-    translate(60,timing*250);
-    drawSpider();
 
-    //button
-    button.display(mouseX, mouseY);
 
+ 
 	//drawCircle
 
 	strokeWeight(2);
@@ -53,9 +40,9 @@ function draw(){
 
 	var time = (new Date()%2000)/2000;
 	var time2 = (new Date()%1000)/1000;
-	//system.addParticle();
-  	//system.run();
-
+  	fill(0);
+    //translate(60,timing*250);
+    drawSpider(60,timing*250);
 	noStroke();
 
 //호박	
@@ -176,18 +163,18 @@ rect(mouseX+100,mouseY+120,10,5);
 function drawSpider(){
   fill(0);
 
-  triangle(310,230,320,225,315,230);
-  triangle(310,230,315,230,325,240);
-  triangle(305,235,310,240,325,240);
-  triangle(305,235,310,240,315,255);
-  triangle(325,245,305,255,310,255);
-  triangle(320,265,305,255,310,255);
-  triangle(335,225,345,230,340,230);
-  triangle(330,240,345,230,340,230);
-  triangle(330,240,350,235,345,240);
-  triangle(340,255,350,235,345,240);
-  triangle(330,245,350,255,345,255);
-  triangle(335,265,350,255,345,255);
+  triangle(310,230*time,320,225*time,315,230*time);
+  triangle(310,230*time,315,230*time,325,240*time);
+  triangle(305,235*time,310,240*time,325,240*time);
+  triangle(305,235*time,310,240*time,315,255*time);
+  triangle(325,245*time,305,255*time,310,255*time);
+  triangle(320,265*time,305,255*time,310,255*time);
+  triangle(335,225*time,345,230*time,340,230*time);
+  triangle(330,240*time,345,230*time,340,230*time);
+  triangle(330,240*time,350,235*time,345,240*time);
+  triangle(340,255*time,350,235*time,345,240*time);
+  triangle(330,245*time,350,255*time,345,255*time);
+  triangle(335,265*time,350,255*time,345,255*time);
 
   ellipse(327,250,15,20);
   ellipse(327,237,5,5);
@@ -335,31 +322,3 @@ function mousePressed() {
     b = random(255);
   }
 }
-
-var button = function(x_, y_, r_) {
-  // Location and size
-  var x = x_;
-  var y = y_;
-  var r = r_;
-
-  // Is a point inside the doorbell? (used for mouse rollover, etc.)
-  this.contains = function(mx, my) {
-    if (dist(mx, my, x, y) < r) {
-      return true;
-    } else {
-      return false;
-    }
-  };
-
-  // Show the doorbell (hardcoded colors, could be improved)
-  this.display = function(mx, my) {
-    if (this.contains(mx, my)) {
-      fill(100);
-    } else {
-      fill(175);
-    }
-    stroke(0);
-    strokeWeight(4);
-    ellipse(x, y, r, r);
-  };
-};
