@@ -1,6 +1,7 @@
 var bg;
 var a=[];
 var frame;
+var batNum=7;
 function setup(){
 
 
@@ -57,15 +58,15 @@ function anime(f){
 
 function frame1(){
 	fill(255);
-	drawBat1(60,70,5)
+	drawBat1(60,70);
 }
 
 function frame2(){
 	fill(255,155,333);
-	ellipse(60,70,100,100);
+	drawBat2(60,70);
 }
 
-function drawBat1(x,y,a){
+function drawBat1(x,y){
 triangle(105,85,65,125,115,95);
 triangle(125,65,80,125,80,120);
 triangle(80,120,95,115,90,125);
@@ -75,4 +76,14 @@ triangle(105,105,115,105,110,110);
 triangle(100,115,110,110,115,140);
 triangle(110,110,115,115,110,125);
 triangle(110,120,115,125,115,140);
+}
+
+function drawBat2(x,y){
+triangle(105,85,120,80,115,95);
+triangle(80,120,95,115,90,125);
+triangle(105,95,115,95,115,105);
+triangle(115,95,120,105,110,110);
+triangle(105,105,115,105,110,110);
+triangle(100,115,110,110,110,125);
+triangle(110,110,115,115,110,125);
 }
